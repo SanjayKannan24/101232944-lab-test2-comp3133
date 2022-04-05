@@ -1,0 +1,26 @@
+<div style="border: 2px solid black; padding: 1vw;">
+  <h1 style="font-size: xx-large;"><strong>SpaceX Mission Launch List</strong></h1>
+
+  <div *ngFor="let m of missions" >
+      <a routerLink="details/{{ m.flight_number }}">
+      <mat-card class="example-card" [ngStyle] = "{'border-radius': '1vw'}">
+          <mat-card-header>
+            <img mat-card-avatar [ngStyle]="{'background-image': 'url(' + m.mission_patch_small + ')', 'background-size': 'cover'  }">
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>{{m.mission_name}}</mat-card-title>
+            <mat-card-subtitle>{{ m.launch_year }}</mat-card-subtitle>
+          </mat-card-header>
+          
+          <mat-card-content>
+            <p>
+              {{m.details}}
+            </p>
+          </mat-card-content>
+      </mat-card>
+    </a>
+      <br>
+  </div>
+</div>
+
+
+  
